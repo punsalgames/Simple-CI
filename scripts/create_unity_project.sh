@@ -16,7 +16,7 @@ source "${SCRIPT_DIR}/derive_names.sh"
 ORG="punsalgames"
 PROJECTS_DIR="/Volumes/BuildDisk/Unity/Projects"
 PROJECT_DIR="${PROJECTS_DIR}/${REPO_NAME}"
-UNITY_VERSION="2022.3.62f1"
+UNITY_VERSION="2022.3.62f3"
 UNITY_BIN="/Volumes/BuildDisk/Unity/Hub/Editor/${UNITY_VERSION}/Unity.app/Contents/MacOS/Unity"
 GITIGNORE_REPO="https://github.com/punsalgames/unity-project-gitignore.git"
 
