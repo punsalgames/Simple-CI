@@ -21,7 +21,7 @@ fi
 REPO_NAME=$(echo "$PROJECT_NAME" | sed 's/ /-/g')
 
 # Bundle suffix: lowercase, remove spaces
-BUNDLE_SUFFIX=$(echo "$PROJECT_NAME" | tr '[:upper:]' '[:lower:]' | tr -d ' ')
+BUNDLE_SUFFIX=$(echo "$PROJECT_NAME" | tr '[:upper:]' '[:lower:]' | tr -d ' -')
 
 # Full bundle ID
 BUNDLE_ID="com.punsal.${BUNDLE_SUFFIX}"
