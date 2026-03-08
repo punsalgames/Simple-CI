@@ -1,4 +1,4 @@
-name: "Unity — Create Project from Template"
+name: "Unity - Create Project from Template"
 
 on:
   workflow_dispatch:

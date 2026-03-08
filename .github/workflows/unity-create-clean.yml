@@ -1,4 +1,4 @@
-name: "Unity — Create Clean Project"
+name: "Unity - Create Clean Project"
 
 on:
   workflow_dispatch:
