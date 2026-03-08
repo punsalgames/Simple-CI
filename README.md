@@ -73,10 +73,13 @@ Every new project is born with:
 ---
 
 ## Branching Strategy
+
+```
 main          ← production, what's live on stores
 develop       ← active development
 feature/*     ← new features
 fix/*         ← bug fixes
+```
 
 ---
 
@@ -102,6 +105,8 @@ Update once → all games get the update automatically.
 ---
 
 ## Repo Structure
+
+```
 Simple-CI/
 ├── .github/
 │   └── workflows/
@@ -125,6 +130,7 @@ Simple-CI/
 ├── INSTALL.md
 ├── TESTING.md
 └── README.md
+```
 
 ---
 
