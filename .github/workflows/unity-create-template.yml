@@ -1,0 +1,27 @@
+name: "Unity — Create Project from Template"
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: "Project name (e.g. Basic Game)"
+        required: true
+        type: string
+      template_repo:
+        description: "Template repo (e.g. punsalgames/unity-project-template)"
+        required: true
+        type: string
+
+jobs:
+  create-project:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Simple-CI
+        uses: actions/checkout@v4
+
+      - name: Create Unity project from template
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PROJECT_NAME: ${{ inputs.project_name }}
+          TEMPLATE_REPO: ${{ inputs.template_repo }}
+        run: bash ${{ github.workspace }}/scripts/create_unity_project_from_template.sh

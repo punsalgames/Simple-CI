@@ -1,0 +1,22 @@
+name: "Unity — Create Clean Project"
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: "Project name (e.g. Basic Game)"
+        required: true
+        type: string
+
+jobs:
+  create-project:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Simple-CI
+        uses: actions/checkout@v4
+
+      - name: Create Unity project
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PROJECT_NAME: ${{ inputs.project_name }}
+        run: bash ${{ github.workspace }}/scripts/create_unity_project.sh

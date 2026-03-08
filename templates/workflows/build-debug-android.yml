@@ -1,0 +1,26 @@
+name: "Build — Debug Android"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-debug-android:
+    runs-on: self-hosted
+    if: github.ref != 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build debug Android
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          FIREBASE_APP_ID_ANDROID: ${{ secrets.FIREBASE_APP_ID_ANDROID }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          KEYSTORE_PATH: ${{ secrets.KEYSTORE_PATH }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          BUILD_TYPE: debug
+          PLATFORM: android
+          SCRIPTING_DEFINES: SIMPLE_DEBUG
+        run: fastlane --fastfile ~/Developer/Simple-CI/templates/fastlane/Fastfile android debug
